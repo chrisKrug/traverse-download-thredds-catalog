@@ -42,7 +42,7 @@ def getUrls(links,url):
 
 def curlFile(fileServerPath,outPath):
 	print('Downloading file: '+fileServerPath)
-	curl = f'curl --output {outPath} --create-dirs {fileServerPath}'
+	curl = f'curl -C --output {outPath} --create-dirs {fileServerPath}'
 #	print(curl)
 	os.system(curl) ### Uncomment to curl files ###
 
