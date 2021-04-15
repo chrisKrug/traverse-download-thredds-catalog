@@ -38,7 +38,8 @@ def getUrls(links,url):
 			fileServerPath = fileUrl.replace('/catalog/','/fileServer/')
 			result = fileServerPath.find(target)
 			outPath = fileServerPath[result:]
-			curlFile(fileServerPath,outPath)
+			if not os.path.exists(outPath):
+				curlFile(fileServerPath,outPath)
 
 def curlFile(fileServerPath,outPath):
 	print('Downloading file: '+fileServerPath)
